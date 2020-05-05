@@ -1,14 +1,21 @@
 {% extends "base.html" %} 
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Todolist/style.css' %}">}
+
+
 {% block content %}
-    <div class="row">
+    <div class="row mt-4">
         <div class="col">
             <h2>Add Task</h2>
-            <div class="col-auto">
+            <form class="form-inline" action="add_todo/" method="post">
+                {% csrf_token %}
+                <div class="col-auto">
                 <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
-              </div>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <input type="text" class="form-control mb-2"  placeholder="enter task">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </form>
         </div>
 
 
