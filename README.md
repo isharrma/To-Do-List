@@ -3,8 +3,9 @@
 
 #Technology Used
 To-do list app is made using:
-Python
-Django Framework
-Bootstrap
-HTML
-CSS
+Python <br>
+Django Framework <br>
+Bootstrap <br>
+HTML <br>
+CSS <br>
+
