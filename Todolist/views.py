@@ -7,12 +7,14 @@ from django.urls import reverse
 from .models import Todo_list
 
 
+
 def index(request):
     todo_items = Todo_list.objects.all().order_by('pub_date')
     return render(request, 'Todolist/index.html',
                     {
-                        "todo_items": todo_items
-                    })
+                        "todo_items": todo_items,
+                    })    
+
 
 @csrf_exempt
 def add_todo(request):
@@ -26,3 +28,9 @@ def add_todo(request):
 def delete_todo(request, todo_id):
     Todo_list.objects.get(id=todo_id).delete()
     return HttpResponseRedirect("/")
+
+
+
+
+
+
